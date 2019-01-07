@@ -9,8 +9,9 @@ import android.view.View;
 import android.widget.SeekBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import fr.wildcodeschool.mediaplayer.player.WildOnPlayerListener;
-import fr.wildcodeschool.mediaplayer.player.WildPlayer;
+
+import fr.wildcodeschool.player.WildPlayer;
+import fr.wildcodeschool.player.WildOnPlayerListener;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
   // Audio player
@@ -27,10 +28,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
    * Application context accessor
    * https://possiblemobile.com/2013/06/context/
    */
-  private static Context appContext;
-  public  static Context getAppContext() {
-    return appContext;
-  }
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     setContentView(R.layout.activity_main);
 
     // Initialization of the application context
-    MainActivity.appContext = getApplicationContext();
 
     // Initialization of the wild audio player
     mPlayer = new WildPlayer(this);
